@@ -1,0 +1,75 @@
+public class Test extends Ballon implements Jeu,Salon,Alcool{
+
+public double test;
+private int e;
+public int w;
+public short t;
+private byte q;
+public float p;
+public Test1 test1;
+//Test123456.methode(+1) (numero4)
+double vovovo;
+
+	public void Allo(){
+	int a=0;
+
+	}
+	
+	public class sayHello{
+			public int sayHello; 
+			
+			public void Saye(){
+	              public Orteille test;
+	              public Doigh test;
+	              public int test2;
+	            }
+	            public void MontrerDuDoigh(){
+	              public Doigh test;
+	              public int test2;
+	            }
+        	private Chienne test;
+	}
+			public void Say(){
+		              public Chien test;
+		              public int test2;
+		              public Chanteur test;
+		            }
+		    public void Crier(){
+		              public Chanteur test;
+		              public int test2;
+		            }
+			public void MontrerDuPied(){
+		              public Pied test;
+		              public Chanteur test;
+		              public int test2;
+		            }
+protected float Jonathan;
+
+
+}
+
+public class Test1 extends Simon{
+
+public int test;
+protected int e;
+protected double i;
+	public void Allo(){
+	public int a=0;
+	public int oil;
+
+	}
+}
+
+
+public class afficherLesRoux{
+
+public int roux;
+protected int evangile;
+double i;
+	public void bleecher(){
+		public int a;
+		public Chiennes test;
+		public int oil;
+
+	}
+}
