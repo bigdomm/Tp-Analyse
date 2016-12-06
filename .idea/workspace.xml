@@ -22,21 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="java-1.7.jj" pinned="false" current-in-tab="false">
+      <file leaf-file-name="java-1.7.jj" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Grammaire/java-1.7.jj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17816">
-              <caret line="1048" column="3" lean-forward="false" selection-start-line="1048" selection-start-column="3" selection-end-line="1048" selection-end-column="3" />
+            <state relative-caret-position="449">
+              <caret line="797" column="6" lean-forward="true" selection-start-line="797" selection-start-column="6" selection-end-line="797" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -45,10 +35,10 @@
       <file leaf-file-name="menuInterfaces.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Grammaire/menuInterfaces.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="416">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1481043721038" expanded="true" signature="28:57" ph="..." />
               </folding>
             </state>
           </provider>
@@ -76,9 +66,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/Grammaire/Collector.java" />
         <option value="$PROJECT_DIR$/src/Grammaire/JavaParser.java" />
-        <option value="$PROJECT_DIR$/src/Grammaire/java-1.7.jj" />
         <option value="$PROJECT_DIR$/src/Grammaire/menuInterfaces.java" />
         <option value="$PROJECT_DIR$/test.txt" />
+        <option value="$PROJECT_DIR$/src/Grammaire/java-1.7.jj" />
       </list>
     </option>
   </component>
@@ -123,6 +113,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Tp-Analyse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet -Analyse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tp-Analyse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projet -Analyse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tp-Analyse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grammaire" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,7 +478,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1481043721038" expanded="true" signature="28:57" ph="..." />
           </folding>
         </state>
       </provider>
@@ -500,20 +522,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Grammaire/java-1.7.jj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17816">
-          <caret line="1048" column="3" lean-forward="false" selection-start-line="1048" selection-start-column="3" selection-end-line="1048" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Grammaire/menuInterfaces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="416">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1481043721038" expanded="true" signature="28:57" ph="..." />
           </folding>
         </state>
       </provider>
@@ -522,6 +536,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grammaire/java-1.7.jj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="797" column="6" lean-forward="true" selection-start-line="797" selection-start-column="6" selection-end-line="797" selection-end-column="6" />
           <folding />
         </state>
       </provider>

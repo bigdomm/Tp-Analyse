@@ -127,8 +127,7 @@ public class JavaParser implements JavaParserConstants {
                         case 4:
                                                                 classeChoix = menu.listeClasses(parser.Classes);
                                                                 nomClasse = parser.Classes.get(classeChoix -1);
-                                                                menu.numero4(nomClasse);
-                                        break;
+                                                                //menu.numero4(nomClasse);                                        break;
                         case 5:
                                         classeChoix = menu.listeClasses(parser.Classes);
                                                                 nomClasse = parser.Classes.get(classeChoix -1);
@@ -2492,6 +2491,7 @@ Token methodName = null;
 
   final public void BlockStatement() throws ParseException {
   String reference = null;
+  Token name = null;
     if (jj_2_43(2)) {
       Annotation();
     } else {

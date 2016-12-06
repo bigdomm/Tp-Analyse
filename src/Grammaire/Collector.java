@@ -224,6 +224,7 @@ public class Collector {
 	    typePrimitif.add("long");
 	    typePrimitif.add("char");
 	    typePrimitif.add("boolean");
+	    typePrimitif.add("String");
 	  }
 
 }

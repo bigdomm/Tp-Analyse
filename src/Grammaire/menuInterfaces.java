@@ -3,6 +3,7 @@ package Grammaire;
 
 import init.ScanEntrer;
 import init.diskFileExplorer;
+import init.search;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -78,28 +79,83 @@ public class menuInterfaces {
         }
 	}
 	
-	public void numero4(Collector a){
+	/*public void numero4(Collector a){
 		Iterator<String> keySetIterator = a.map.keySet().iterator();
-
+		System.out.println(a.map);
+		System.out.println(a.assoRecurrency);
+		Set<String> set = new HashSet<String>() ;
+        set.addAll(a.assoRecurrency) ;
+        ArrayList<String> distinctList = new ArrayList<String>(set) ;
+        
 		while(keySetIterator.hasNext()){
 		  int staticCall = 0;
 		  int toShow = 0;
 		  boolean lookahead = false;
 		  String key = keySetIterator.next();
 		  
-		  if(a.assoRecurrency.contains(a.map.get(key)) && Collections.frequency(a.map.values(), a.map.get(key)) <= 1){
+		  if(distinctList.contains(a.map.get(key)) && Collections.frequency(a.map.values(), a.map.get(key)) <= 1){
 			  lookahead = true;
 		  }
-				if(a.assoRecurrency.contains(key) || lookahead){
-					if(a.assoRecurrency.contains(a.map.get(key))){
-						staticCall = Collections.frequency(a.assoRecurrency, a.map.get(key));
+				if(distinctList.contains(key) || lookahead ){
+					if(distinctList.contains(a.map.get(key))){
+						staticCall = Collections.frequency(distinctList, a.map.get(key));
 					}
 					toShow = Collections.frequency(a.assoRecurrency, key)+ staticCall;
 					System.out.println("La classe " + a.getNomClasse() + " appel " + toShow + " fois la classe " + a.map.get(key));
 				}
+				
 		}
+			
+		
 
-	}
+	}*/
+	
+	/*public void numero4(Collector a){
+		
+		
+		Set<String> set = new HashSet<String>() ;
+        set.addAll(a.assoRecurrency) ;
+        ArrayList<String> distinctList = new ArrayList<String>(set) ;
+        Set<method> method = new HashSet<method>() ;
+        method.addAll(a.listMethod) ;
+        ArrayList<method> methodlist = new ArrayList<method>(method) ;
+        
+        Iterator<String> keySetIterator = distinctList.iterator();
+        Iterator<Grammaire.Collector.method> methodIterator = methodlist.iterator();
+        
+        ArrayList<String> methodTo = new ArrayList<String>();
+        
+        int staticCall = 0;
+        method type = null;
+        
+        while(methodIterator.hasNext()){
+        	type = methodIterator.next();
+        	methodTo.add(type.methodeGeneral);
+        }
+        while(keySetIterator.hasNext()){
+        	staticCall = 0;
+        	String key = keySetIterator.next();
+        	if(methodIterator.hasNext()){
+        		type = methodIterator.next();
+        	}
+
+        	if(Collections.frequency(methodTo, key) == 0 ){
+        		if(distinctList.contains(key)){
+					if(distinctList.contains(a.map.get(key))){
+						staticCall = Collections.frequency(distinctList, a.map.get(key));
+					}
+					int toShow = Collections.frequency(a.assoRecurrency, key)+ staticCall;
+					if (a.map.get(key)== null){
+						
+						System.out.println("La classe " + a.getNomClasse() + " appel " + toShow + " fois la classe " + key);   
+					}
+					if(!a.typePrimitif.contains(a.map.get(key))&& a.map.get(key)!= null){
+						System.out.println("La classe " + a.getNomClasse() + " appel " + toShow + " fois la classe " + a.map.get(key));   
+					}
+				}
+        	}
+        }
+	}*/
 	
 	public void numero5(Collector a){
 		ArrayList<String> list = new ArrayList<String>() ;
