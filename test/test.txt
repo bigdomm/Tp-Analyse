@@ -28,6 +28,8 @@ double vovovotest2;
 	              Doigh.capture();
 	              if(true){
 	              	Legumes.oignon();
+	              	
+	              MontrerDuDoigh();
 	              }
 	              
 	            }

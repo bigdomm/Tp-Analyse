@@ -160,7 +160,10 @@ public class Collector {
 	  public String Pourcentage(double a)
 	  {
 	    DecimalFormat df = new DecimalFormat("#.##");
-	    return String.valueOf(df.format(100 * (a / (total() - nb_attribut))));
+	    if(total() != 0)
+	    	return String.valueOf(df.format(100 * (a / (total() - nb_attribut))));
+	    else
+	    	return String.valueOf(0);
 	  }
 
 	  public String PourcentageReference(double a)

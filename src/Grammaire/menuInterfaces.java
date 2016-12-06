@@ -79,11 +79,35 @@ public class menuInterfaces {
 	}
 	
 	public void numero4(Collector a){
-		//Commit
-		System.out.println(a.instanceDeClasseList);
-		System.out.println(a.instanceDeClasse);
-		System.out.println(a.map);
-		
+
+		Set<method> method = new HashSet<method>() ;
+        method.addAll(a.listMethod) ;
+        ArrayList<method> methodlist = new ArrayList<method>(method) ;
+        
+        Iterator<Grammaire.Collector.method> methodIterator = methodlist.iterator();
+        ArrayList<String> classExeptYou = new ArrayList<String>() ;
+        a.instanceDeClasse.clear();
+        
+        //showing class with extension (no extension = calling intern function)
+        while(methodIterator.hasNext()){
+        	method m = methodIterator.next();
+        	if(a.map.containsKey(m.classe)){
+        		classExeptYou.add(a.map.get(m.classe));
+        		a.instanceDeClasse.put(a.map.get(m.classe), "Class");
+        	}else{
+        		classExeptYou.add(m.classe);
+        		a.instanceDeClasse.put(m.classe, "Class");
+        	}
+        }
+        Iterator<String> instanceDeClasseIterator = a.instanceDeClasse.keySet().iterator();
+        
+        while(instanceDeClasseIterator.hasNext()){
+        	String t = instanceDeClasseIterator.next();
+        	System.out.println("La classe " + a.getNomClasse() + " appel " + Collections.frequency(classExeptYou, t) + " fois la classe " + t);
+        	
+        }
+
+
 	}
 	/*public void numero4(Collector a){
 		Iterator<String> keySetIterator = a.map.keySet().iterator();
