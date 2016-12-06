@@ -1,3 +1,3 @@
-Ajouter le numéro 4 dans les statements (if,switch,for) []
-Afficher appele vers la classe system (println,in,out) []
-Parcourt dans les fichiers et choisir ton fichier à analyse []
+Ajouter le numï¿½ro 4 dans les statements (if,switch,for) [oui]
+Afficher appele vers la classe system (println,in,out) [correct]
+Parcourt dans les fichiers et choisir ton fichier ï¿½ analyse [ok]

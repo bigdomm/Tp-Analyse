@@ -30,6 +30,7 @@ public class Collector {
 	
 	Hashtable<String, String> source = new Hashtable<String,String>();
 	HashMap<String, String>  map = new HashMap<String, String>(source);
+	HashMap<String, String>  instanceDeClasse = new HashMap<String, String>(source);
 	
 	public class method{
 		public String nom = "";
@@ -224,7 +225,6 @@ public class Collector {
 	    typePrimitif.add("long");
 	    typePrimitif.add("char");
 	    typePrimitif.add("boolean");
-	    typePrimitif.add("String");
 	  }
 
 }
