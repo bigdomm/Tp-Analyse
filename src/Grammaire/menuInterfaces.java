@@ -80,7 +80,6 @@ public class menuInterfaces {
 	
 	public void numero4(Collector a){
 		System.out.println(a.instanceDeClasseList);
-		
 		System.out.println(a.instanceDeClasse);
 		System.out.println(a.map);
 		
