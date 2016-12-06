@@ -27,6 +27,7 @@ public class Collector {
 	
 	ArrayList<String> assoRecurrency = new ArrayList<String>();
 	ArrayList<method> listMethod = new ArrayList<method>();
+	ArrayList<String> instanceDeClasseList = new ArrayList<String>();
 	
 	Hashtable<String, String> source = new Hashtable<String,String>();
 	HashMap<String, String>  map = new HashMap<String, String>(source);

@@ -26,9 +26,13 @@ double vovovotest2;
 	              public int counters;
 	              ort.capture();
 	              Doigh.capture();
+	              if(true){
+	              	Legumes.oignon();
+	              }
+	              
 	            }
 	            public void MontrerDuDoigh(){
-	              public Doigh index;
+	              Doigh index;
 	              public int counter;
 	              index.capture();
 	              index.retrouver();

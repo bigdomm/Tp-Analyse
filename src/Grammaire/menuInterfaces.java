@@ -79,6 +79,8 @@ public class menuInterfaces {
 	}
 	
 	public void numero4(Collector a){
+		System.out.println(a.instanceDeClasseList);
+		
 		System.out.println(a.instanceDeClasse);
 		System.out.println(a.map);
 		
@@ -234,7 +236,7 @@ public class menuInterfaces {
 	public void numero5(Collector a){
 		ArrayList<String> list = new ArrayList<String>() ;
 
-		if(!a.assoRecurrency.isEmpty()){
+		if(!a.instanceDeClasseList.isEmpty()){
 			for (Iterator<method> t = a.listMethod.iterator(); t.hasNext();)
 			{
 				method type = t.next();
