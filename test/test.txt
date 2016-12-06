@@ -1,3 +1,5 @@
+import java.io;
+
 public class Test extends Ballon implements Jeu,Salon,Alcool{
 
 public double test;
@@ -8,7 +10,7 @@ private byte q;
 public float p;
 public Test1 test1;
 //Test123456.methode(+1) (numero4)
-double vovovo;
+double vovovotest2;
 
 	public void Allo(){
 	int a=0;
@@ -19,13 +21,18 @@ double vovovo;
 			public int sayHello; 
 			
 			public void Saye(){
-	              public Orteille test;
-	              public Doigh test;
-	              public int test2;
+	              public Orteille ort;
+	              public Doigh majeur;
+	              public int counters;
+	              ort.capture();
+	              Doigh.capture();
 	            }
 	            public void MontrerDuDoigh(){
-	              public Doigh test;
-	              public int test2;
+	              public Doigh index;
+	              public int counter;
+	              index.capture();
+	              index.retrouver();
+	              
 	            }
         	private Chienne test;
 	}
@@ -48,14 +55,16 @@ protected float Jonathan;
 
 }
 
-public class Test1 extends Simon{
+public class testeur extends Simon{
 
 public int test;
 protected int e;
 protected double i;
 	public void Allo(){
-	public int a=0;
-	public int oil;
+		public int a=0;
+		public int oil;
+		Test3 test2 = new Test3();
+		test2.afficher();
 
 	}
 }
@@ -70,6 +79,8 @@ double i;
 		public int a;
 		public Chiennes test;
 		public int oil;
+		//test.mordre();
+		Chiennes.mordre();
 
 	}
 }

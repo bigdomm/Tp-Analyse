@@ -2,6 +2,8 @@ package Grammaire;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -19,9 +21,31 @@ public class Collector {
 	private boolean hasHeritageMultiple = false;
 	private String heriteFrom = "";
 	private String Interface = "";
+	
 	Stack<String> stackAsso = new Stack<String>();
 	Stack<String> stackMethod = new Stack<String>();
+	
+	ArrayList<String> assoRecurrency = new ArrayList<String>();
+	ArrayList<method> listMethod = new ArrayList<method>();
+	
+	Hashtable<String, String> source = new Hashtable<String,String>();
+	HashMap<String, String>  map = new HashMap<String, String>(source);
+	
+	public class method{
+		public String nom = "";
+		public String classe = "";
+		public String methodeGeneral = "";
+		
+		public method(String n,String c,String genMethod){
+			nom = n;
+			classe = c;
+			methodeGeneral = genMethod;
+		}
+	}
 
+	public ArrayList<String> getAssoRecurrency() {
+		return assoRecurrency;
+	}
 
 	public Stack<String> getStackAsso() {
 		return stackAsso;

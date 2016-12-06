@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
+import Grammaire.Collector.method;
 
 /** Token Manager. */
 public class JavaParserTokenManager implements JavaParserConstants

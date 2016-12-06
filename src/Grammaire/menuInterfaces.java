@@ -2,14 +2,15 @@ package Grammaire;
 
 
 import init.ScanEntrer;
-import init.search;
+import init.diskFileExplorer;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.Stack;
+
+import Grammaire.Collector.method;
 
 
 
@@ -27,7 +28,7 @@ public class menuInterfaces {
 		System.out.println("3 - Héritage et association - Numéro 3");
 		System.out.println("4 - Couplage entre classes - Numéro 4");
 		System.out.println("5 - Appels direct - Numéro 5");
-		System.out.println("6 - Quitter l'application");
+		System.out.println("6 - Revenir en arrière");
 
 		System.out.print("\nInscrivez le chiffre a la gauche de l'action désiré : ");
 
@@ -77,33 +78,78 @@ public class menuInterfaces {
         }
 	}
 	
-	public void showAssoc(Collector a){
-		Stack<String> stackAsso;
-		ArrayList<String> references = new ArrayList<String>();
-		stackAsso = a.getStackAsso();
-		int size  = stackAsso.size();
-		
-		for (int ite = 0; ite < size ;ite++)
-	    {
-			String toShow = stackAsso.peek();
-			boolean s = search.rechercheTypeReference(toShow,a);
-			
-			if(!stackAsso.isEmpty() && s){
-				references.add(toShow);
-			}
-			stackAsso.pop();
-		
-	    }
-		Set<String> printed = new HashSet<>();
-		for (String s : references) {
-		    if (printed.add(s))
-		        System.out.println("Association avec " + s + " se produit " + Collections.frequency(references, s) + " fois");
+	public void numero4(Collector a){
+		Iterator<String> keySetIterator = a.map.keySet().iterator();
 
+		while(keySetIterator.hasNext()){
+		  int staticCall = 0;
+		  int toShow = 0;
+		  boolean lookahead = false;
+		  String key = keySetIterator.next();
+		  
+		  if(a.assoRecurrency.contains(a.map.get(key)) && Collections.frequency(a.map.values(), a.map.get(key)) <= 1){
+			  lookahead = true;
+		  }
+				if(a.assoRecurrency.contains(key) || lookahead){
+					if(a.assoRecurrency.contains(a.map.get(key))){
+						staticCall = Collections.frequency(a.assoRecurrency, a.map.get(key));
+					}
+					toShow = Collections.frequency(a.assoRecurrency, key)+ staticCall;
+					System.out.println("La classe " + a.getNomClasse() + " appel " + toShow + " fois la classe " + a.map.get(key));
+				}
 		}
-		if(references.isEmpty())
-			    	System.out.println("Aucun association!");
+
 	}
 	
+	public void numero5(Collector a){
+		ArrayList<String> list = new ArrayList<String>() ;
+		
+		if(!a.assoRecurrency.isEmpty()){
+			for (Iterator<method> t = a.listMethod.iterator(); t.hasNext();)
+		    {
+		        method type = t.next();
+		        
+		        if(a.map.get(type.classe)==null)
+		        {
+		        	list.add("La méthode " + type.methodeGeneral + " de la classe " +
+				    	    a.getNomClasse() + " appel directement la classe " + type.classe + " via la méthode " + type.nom);
+		        	//System.out.println();
+		        	
+		        }
+		        else
+		        {
+		        	list.add("La méthode " + type.methodeGeneral + " de la classe " +
+				        	a.getNomClasse() + " appel directement la classe " + a.map.get(type.classe) + " via la méthode " + type.nom);
+		        	//System.out.println();
+		        }
+		     }
+		}
+		else{
+			System.out.println("Aucun appel direct pour la classe " + a.getNomClasse());
+		}
+		Set<String> set = new HashSet<String>() ;
+        set.addAll(list) ;
+        ArrayList<String> distinctList = new ArrayList<String>(set) ;
+		
+        for (Iterator<String> t = distinctList.iterator(); t.hasNext();)
+	    {
+        	String type = t.next();
+        	System.out.println(type);
+	    }
+	    
+	}
 	
+	public String afficherDossier(String pathToExplore){
+		  diskFileExplorer diskFileExplorer = new diskFileExplorer(pathToExplore, true);
+		  Long start = System.currentTimeMillis();
+		  String choice = diskFileExplorer.list();
+		  System.out.println("----------");
+		  System.out.println("Analyse de " + pathToExplore + " en " + (System.currentTimeMillis() - start) + " mses");
+		  System.out.println(diskFileExplorer.filecount + " fichiers");
+		  System.out.println("------------------------");
+		  System.out.println("------------------------");
+		  
+		  return choice;
+	}
 }
 
