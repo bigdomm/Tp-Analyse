@@ -2,13 +2,24 @@
 /* JavaCCOptions:TOKEN_EXTENDS=,KEEP_LINE_COL=null,SUPPORT_CLASS_VISIBILITY_PUBLIC=true */
 package Grammaire;
 
-
 /**
  * Describes the input token stream.
  */
 
-public class Token implements java.io.Serializable {
+public class Token implements java.io.Serializable, JavaParserConstants {
 
+	public static class GTToken extends Token
+	{
+		public GTToken(int ofKind, String image) {
+			super(ofKind,image);
+			realKind = ofKind;
+		}
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -6413223241196596691L;
+		public int realKind;
+	}
   /**
    * The version identifier for this Serializable class.
    * Increment only if the <i>serialized</i> form of the
@@ -119,6 +130,9 @@ public class Token implements java.io.Serializable {
   {
     switch(ofKind)
     {
+      case JavaParserConstants.GT :  return new Token.GTToken(ofKind,image) ;
+      case JavaParserConstants.RUNSIGNEDSHIFT :  return new Token.GTToken(ofKind,image) ;
+      case JavaParserConstants.RSIGNEDSHIFT :  return new Token.GTToken(ofKind,image) ;
       default : return new Token(ofKind, image);
     }
   }
@@ -127,15 +141,6 @@ public class Token implements java.io.Serializable {
   {
     return newToken(ofKind, null);
   }
-  
-  public static class GTToken extends Token
-  {
-     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	int realKind = JavaParserConstants.GT;
-  }
 
 }
-/* JavaCC - OriginalChecksum=8db5a3945999313839e70467e9ee040e (do not edit this line) */
+/* JavaCC - OriginalChecksum=ee5c0089f7175f841e6e7d85e173c508 (do not edit this line) */

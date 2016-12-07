@@ -2,8 +2,8 @@
 /**
  * Classe paiement
  * 
- * Auteur: Vincent Gélinas
- * Date de création: 2016-04-12
+ * Auteur: Vincent Gï¿½linas
+ * Date de crï¿½ation: 2016-04-12
  * 
  */
 
@@ -46,14 +46,14 @@ public class Paiement {
 	}
 
 	public String getModePaiement() {
-		return modePaiement;
+		return modePaiement.toString();
 	}
 
 	public void setModePaiement(String modePaiement) {
 		this.modePaiement = modePaiement;
 	}
 
-	//Fonction pour créer un paiement
+	//Fonction pour crï¿½er un paiement
 	public static int createPaiement(Paiement p) {
 		arrayPaiement.add(p);
 		

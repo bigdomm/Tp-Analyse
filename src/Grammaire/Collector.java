@@ -32,6 +32,7 @@ public class Collector {
 	Hashtable<String, String> source = new Hashtable<String,String>();
 	HashMap<String, String>  map = new HashMap<String, String>(source);
 	HashMap<String, String>  instanceDeClasse = new HashMap<String, String>(source);
+	HashMap<String, String>  typeNomMap = new HashMap<String, String>(source);
 	
 	public class method{
 		public String nom = "";

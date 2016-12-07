@@ -1,20 +1,20 @@
 /*
 Application sur la gestion des clients (Cas #1)
-Méthode principale : ajout d'un client et recherche de la présence d'un client
+Mï¿½thode principale : ajout d'un client et recherche de la prï¿½sence d'un client
 
-j'ai implémenté volontairement des fonctionnalités sur les affichages des clients
+j'ai implï¿½mentï¿½ volontairement des fonctionnalitï¿½s sur les affichages des clients
 qui ne sont pas contenu dans mes diagrammes.
 
 Fait par : Dominic Lafrance
 2016-04-02
 
-La classe GestionnaireClient sert d'intermédiaire à l'appel direct
-des méthodes de la classe Clients. Sa présence accentu la cohésion et
-découle du patron de conception Controleur.
+La classe GestionnaireClient sert d'intermï¿½diaire ï¿½ l'appel direct
+des mï¿½thodes de la classe Clients. Sa prï¿½sence accentu la cohï¿½sion et
+dï¿½coule du patron de conception Controleur.
 */
 
 public class AjoutClient {
-	
+	public int nombre;
 	public static void gestionClient(){
 		int choix = 0;
 		
@@ -28,11 +28,11 @@ public class AjoutClient {
 				ajout();
 				break;
 
-				// Vérifie la présence d'un client dans le système
+				// Vï¿½rifie la prï¿½sence d'un client dans le systï¿½me
 			case 2:
 				rechercheAvance();
 				break;
-				//Affiche une liste complète de tous les clients
+				//Affiche une liste complï¿½te de tous les clients
 			case 3:
 				listerClient();
 				break;
@@ -52,22 +52,22 @@ public class AjoutClient {
 		
 		System.out.println("----- Gestion client -----\n");
 		System.out.println("1 - Ajouter un client");
-		System.out.println("2 - Vérifier la présence d'un client");
-		System.out.println("3 - Lister les clients (complément)");
+		System.out.println("2 - Vï¿½rifier la prï¿½sence d'un client");
+		System.out.println("3 - Lister les clients (complï¿½ment)");
 		System.out.println("4 - Retour au menu principal");
 
-		System.out.print("\nInscrivez le chiffre a la gauche de l'action désiré : ");
+		System.out.print("\nInscrivez le chiffre a la gauche de l'action dï¿½sirï¿½ : ");
 
 		//Scan d'un entier entre 1 et 5
-		return ScanEntrer.scannerEntier(1, 4, "Désolé, choix invalide!");
+		return ScanEntrer.scannerEntier(1, 4, "Dï¿½solï¿½, choix invalide!");
 
 	}
 	
-	//Appel au gestionnaire pour ajouter un nouveau client avec validation de sa présence avant
+	//Appel au gestionnaire pour ajouter un nouveau client avec validation de sa prï¿½sence avant
 	//
 		private static void ajout(){
 			
-			System.out.print("Entrez votre prénom : ");
+			System.out.print("Entrez votre prï¿½nom : ");
 			String prenom = ScanEntrer.regString();
 			
 			System.out.print("Entrez votre nom : ");
@@ -81,16 +81,16 @@ public class AjoutClient {
 			
 			do{
 				if(i >= 0){
-					 System.out.println("Notre système a détecté que le numéro de permis est déjà présent.");
+					 System.out.println("Notre systï¿½me a dï¿½tectï¿½ que le numï¿½ro de permis est dï¿½jï¿½ prï¿½sent.");
 				 }
 				
-				 System.out.print("Entrez votre numéro de permis : ");
+				 System.out.print("Entrez votre numï¿½ro de permis : ");
 				 permis = ScanEntrer.regString();
 				 i++;
 				 
 			}while(Clients.isPresent(permis));
 			
-			System.out.print("Entrez votre numéro de carte bancaire : ");
+			System.out.print("Entrez votre numï¿½ro de carte bancaire : ");
 			String carte = ScanEntrer.regString();
 			
 			GestionnaireClient.ajoutClient(nom, prenom, dateN, permis, carte);
@@ -99,13 +99,13 @@ public class AjoutClient {
 		//Appel au gestionnaire pour la recherche avancer qui s'effectue sur le permis
 		private static void rechercheAvance(){
 			
-			System.out.print("Entrez le numéro de permis : ");
+			System.out.print("Entrez le numï¿½ro de permis : ");
 			String permis = ScanEntrer.regString();
 			
 			if(GestionnaireClient.rechercherClient(permis)) 
 				GestionnaireClient.listeRecherche(Clients.getClient(),permis);	
 			else 
-				System.out.println("Il n'y a aucun client de contenu dans le système avec ce numéro de permis!");
+				System.out.println("Il n'y a aucun client de contenu dans le systï¿½me avec ce numï¿½ro de permis!");
 				
 			
 		}

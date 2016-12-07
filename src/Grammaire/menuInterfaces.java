@@ -91,12 +91,15 @@ public class menuInterfaces {
         //showing class with extension (no extension = calling intern function)
         while(methodIterator.hasNext()){
         	method m = methodIterator.next();
-        	if(a.map.containsKey(m.classe)){
-        		classExeptYou.add(a.map.get(m.classe));
-        		a.instanceDeClasse.put(a.map.get(m.classe), "Class");
-        	}else{
-        		classExeptYou.add(m.classe);
-        		a.instanceDeClasse.put(m.classe, "Class");
+        	//To do - ne pas afficher et compter le nombre d'appel si c'est ta propre classe
+        	if(!a.typeNomMap.containsKey(m.classe) && !a.map.get(m.classe).equals(a.getNomClasse())){
+        		if(a.map.containsKey(m.classe)){
+            		classExeptYou.add(a.map.get(m.classe));
+            		a.instanceDeClasse.put(a.map.get(m.classe), "Class");
+            	}else{
+            		classExeptYou.add(m.classe);
+            		a.instanceDeClasse.put(m.classe, "Class");
+            	}
         	}
         }
         Iterator<String> instanceDeClasseIterator = a.instanceDeClasse.keySet().iterator();
@@ -106,178 +109,42 @@ public class menuInterfaces {
         	System.out.println("La classe " + a.getNomClasse() + " appel " + Collections.frequency(classExeptYou, t) + " fois la classe " + t);
         	
         }
+        
+        if(a.instanceDeClasse.isEmpty()){
+        	System.out.println("Il n'y a aucun appel direct pour la classe " + a.getNomClasse());
+        }
 
 
 	}
-	/*public void numero4(Collector a){
-		Iterator<String> keySetIterator = a.map.keySet().iterator();
-		System.out.println(a.map);
-		System.out.println(a.assoRecurrency);
-		Set<String> set = new HashSet<String>() ;
-        set.addAll(a.assoRecurrency) ;
-        ArrayList<String> distinctList = new ArrayList<String>(set) ;
-
-		while(keySetIterator.hasNext()){
-		  int staticCall = 0;
-		  int toShow = 0;
-		  boolean lookahead = false;
-		  String key = keySetIterator.next();
-
-		  if(distinctList.contains(a.map.get(key)) && Collections.frequency(a.map.values(), a.map.get(key)) <= 1){
-			  lookahead = true;
-		  }
-				if(distinctList.contains(key) || lookahead ){
-					if(distinctList.contains(a.map.get(key))){
-						staticCall = Collections.frequency(distinctList, a.map.get(key));
-					}
-					toShow = Collections.frequency(a.assoRecurrency, key)+ staticCall;
-					System.out.println("La classe " + a.getNomClasse() + " appel " + toShow + " fois la classe " + a.map.get(key));
-				}
-
-		}
-
-
-
-	}
-	*/
-	/*public void numero4(Collector a){
-
-		System.out.println(a.map);
-		System.out.println(a.assoRecurrency);
-		
-		Set<method> method = new HashSet<method>() ;
-        method.addAll(a.listMethod) ;
-        
-        ArrayList<method> methodlist = new ArrayList<method>(method) ;
-        ArrayList<String> methodTo = new ArrayList<String>();
-		ArrayList<String> classes = new ArrayList<String>();
-		
-		Iterator<Grammaire.Collector.method> methodIterator = methodlist.iterator();
-        Iterator<String> assoRecurrencyIterator = a.assoRecurrency.iterator();
-		
-		String classe = "";
-		
-		while(methodIterator.hasNext()){
-			method m = methodIterator.next();
-			methodTo.add(m.classe);
-		}
-		System.out.println("methode : " + methodTo);
-		while(assoRecurrencyIterator.hasNext()){
-			
-			String type = assoRecurrencyIterator.next();
-			
-			if(a.map.containsValue(type) && !a.typePrimitif.contains(type)){
-				classe = type;
-				System.out.println(classe);
-				classes.add(classe);
-			}
-			else if(a.map.containsKey(type) && !a.typePrimitif.contains(a.map.get(type))){
-				classe = a.map.get(type);
-				System.out.println(classe);
-				classes.add(classe);
-			}
-		}
-		if(!a.map.containsValue(a.assoRecurrency)){
-			System.out.println("Appels static !");	
-			
-		}
-		System.out.println(classes);
-		
-		Set<String> set = new HashSet<String>() ;
-        set.addAll(methodTo) ;
-        ArrayList<String> distinctList = new ArrayList<String>(set) ;
-        Iterator<String> keySetIterator = distinctList.iterator();
-
-		while(keySetIterator.hasNext()){
-        	String key = keySetIterator.next();
-        	System.out.println("La classe " + a.getNomClasse() + " appel " +
-        	Collections.frequency(methodTo, key) + " la classe " + key);
-        		classes.add(key);
-
-        }
-		set = new HashSet<String>() ;
-        set.addAll(classes) ;
-        
-        ArrayList<String> classesNoDouble = new ArrayList<String>(set) ;
-		/*for(int te = 0; te < classesNoDouble.size()-1;te++){
-			System.out.println("La classe " + a.getNomClasse() + " appel " + Collections.frequency(classes, classesNoDouble.get(te)) + " fois la classe " + classesNoDouble.get(te));
-		}
-		
-		int ite = 0;
-		while(methodIterator.hasNext()){
-			method m = methodIterator.next();
-			
-		}
-		
-	}*/
-	/*public void numero4(Collector a){
-
-
-		Set<String> set = new HashSet<String>() ;
-        set.addAll(a.assoRecurrency) ;
-        ArrayList<String> distinctList = new ArrayList<String>(set) ;
-        Set<method> method = new HashSet<method>() ;
-        method.addAll(a.listMethod) ;
-        ArrayList<method> methodlist = new ArrayList<method>(method) ;
-
-        Iterator<String> keySetIterator = distinctList.iterator();
-        Iterator<Grammaire.Collector.method> methodIterator = methodlist.iterator();
-
-        ArrayList<String> methodTo = new ArrayList<String>();
-
-        int staticCall = 0;
-        method type = null;
-
-        while(methodIterator.hasNext()){
-        	type = methodIterator.next();
-        	methodTo.add(type.methodeGeneral);
-        }
-        while(keySetIterator.hasNext()){
-        	staticCall = 0;
-        	String key = keySetIterator.next();
-        	if(methodIterator.hasNext()){
-        		type = methodIterator.next();
-        	}
-
-        	if(Collections.frequency(methodTo, key) == 0 ){
-        		if(distinctList.contains(key)){
-					if(distinctList.contains(a.map.get(key))){
-						staticCall = Collections.frequency(distinctList, a.map.get(key));
-					}
-					int toShow = Collections.frequency(a.assoRecurrency, key)+ staticCall;
-					if (a.map.get(key)== null){
-
-						System.out.println("La classe " + a.getNomClasse() + " appel " + toShow + " fois la classe " + key);   
-					}
-					if(!a.typePrimitif.contains(a.map.get(key))&& a.map.get(key)!= null){
-						System.out.println("La classe " + a.getNomClasse() + " appel " + toShow + " fois la classe " + a.map.get(key));   
-					}
-				}
-        	}
-        }
-	}*/
 
 	public void numero5(Collector a){
 		ArrayList<String> list = new ArrayList<String>() ;
-
-		if(!a.instanceDeClasseList.isEmpty()){
+		System.out.println(a.map);
+		System.out.println(a.typeNomMap);
+		System.out.println(a.instanceDeClasseList);
+		
+		if(!a.instanceDeClasseList.isEmpty() || !a.map.isEmpty()){
 			for (Iterator<method> t = a.listMethod.iterator(); t.hasNext();)
 			{
 				method type = t.next();
+				System.out.println("Map : " + a.map.get(type.classe) + "nom classe : " + a.getNomClasse());
+				if(!a.typeNomMap.containsKey(type.classe) ){
+					
+					if(a.map.get(type.classe)==null && !type.classe.equals(a.getNomClasse()))
+					{
+						list.add("La méthode " + type.methodeGeneral + " de la classe " +
+								a.getNomClasse() + " appel directement la classe " + type.classe + " via la méthode " + type.nom);
+						//System.out.println();
 
-				if(a.map.get(type.classe)==null)
-				{
-					list.add("La méthode " + type.methodeGeneral + " de la classe " +
-							a.getNomClasse() + " appel directement la classe " + type.classe + " via la méthode " + type.nom);
-					//System.out.println();
-
+					}
+					else
+					{
+						if(!a.map.get(type.classe).equals(a.getNomClasse()))
+						list.add("La méthode " + type.methodeGeneral + " de la classe " +
+								a.getNomClasse() + " appel directement la classe " + a.map.get(type.classe) + " via la méthode " + type.nom);
+					}
 				}
-				else
-				{
-					list.add("La méthode " + type.methodeGeneral + " de la classe " +
-							a.getNomClasse() + " appel directement la classe " + a.map.get(type.classe) + " via la méthode " + type.nom);
-					//System.out.println();
-				}
+				
 			}
 		}
 		else{
@@ -292,7 +159,9 @@ public class menuInterfaces {
 			String type = t.next();
 			System.out.println(type);
 		}
-
+		
+		if(distinctList.isEmpty())
+			System.out.println("Aucun appel direct pour la classe " + a.getNomClasse());
 	}
 
 	public String afficherDossier(String pathToExplore){

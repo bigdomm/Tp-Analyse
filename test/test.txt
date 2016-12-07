@@ -83,9 +83,9 @@ protected int evangile;
 double i;
 	public void bleecher(){
 		public int a;
-		public Chiennes test;
+		Chiennes test;
 		public int oil;
-		//test.mordre();
+		est.mordre();
 		Chiennes.mordre();
 
 	}
