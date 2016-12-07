@@ -12,9 +12,9 @@ public Test1 test1;
 //Test123456.methode(+1) (numero4)
 double vovovotest2;
 
-	public void Allo(){
+	public void Allo(Frere f){
 	int a=0;
-
+	f.Frapper();
 	}
 	
 	public class sayHello{

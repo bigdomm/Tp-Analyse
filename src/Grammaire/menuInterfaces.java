@@ -91,8 +91,8 @@ public class menuInterfaces {
         //showing class with extension (no extension = calling intern function)
         while(methodIterator.hasNext()){
         	method m = methodIterator.next();
-        	//To do - ne pas afficher et compter le nombre d'appel si c'est ta propre classe
-        	if(!a.typeNomMap.containsKey(m.classe) && !a.map.get(m.classe).equals(a.getNomClasse())){
+        	
+        	if(!a.typeNomMap.containsKey(m.classe) && !a.map.containsValue(a.getNomClasse())){
         		if(a.map.containsKey(m.classe)){
             		classExeptYou.add(a.map.get(m.classe));
             		a.instanceDeClasse.put(a.map.get(m.classe), "Class");
@@ -119,23 +119,18 @@ public class menuInterfaces {
 
 	public void numero5(Collector a){
 		ArrayList<String> list = new ArrayList<String>() ;
-		System.out.println(a.map);
-		System.out.println(a.typeNomMap);
-		System.out.println(a.instanceDeClasseList);
 		
 		if(!a.instanceDeClasseList.isEmpty() || !a.map.isEmpty()){
 			for (Iterator<method> t = a.listMethod.iterator(); t.hasNext();)
 			{
 				method type = t.next();
-				System.out.println("Map : " + a.map.get(type.classe) + "nom classe : " + a.getNomClasse());
+				
 				if(!a.typeNomMap.containsKey(type.classe) ){
 					
 					if(a.map.get(type.classe)==null && !type.classe.equals(a.getNomClasse()))
 					{
 						list.add("La méthode " + type.methodeGeneral + " de la classe " +
 								a.getNomClasse() + " appel directement la classe " + type.classe + " via la méthode " + type.nom);
-						//System.out.println();
-
 					}
 					else
 					{
