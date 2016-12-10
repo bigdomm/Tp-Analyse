@@ -5,6 +5,7 @@ import init.ScanEntrer;
 import init.diskFileExplorer;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -19,7 +20,8 @@ import Grammaire.Collector.method;
  * 
  */
 public class menuInterfaces {
-
+	final public static String affichageFormatage = "%-30s%-23s%-23s";
+	
 	public static int menuPrincipale() {
 
 		System.out.println("----- Menu principal -----\n");
@@ -53,7 +55,7 @@ public class menuInterfaces {
 	}
 
 	public void numero1(Collector item){
-		System.out.println("------------------------------------------------------");
+		System.out.println("\n------------------------------------------------------");
 		System.out.println("Nombre d'attributs public : " + item.getNb_public());
 		System.out.println("Nombre d'attributs prives : " + item.getNb_private());
 		System.out.println("Nombre d'attributs protected : " + item.getNb_protected());
@@ -69,7 +71,7 @@ public class menuInterfaces {
 	}
 
 	public void numero3(Collector item){
-		System.out.println("H\u00e9ritage : " + item.isHasHeritage());
+		System.out.println("\nH\u00e9ritage : " + item.isHasHeritage());
 		System.out.println("H\u00e9ritage Multiple : " + item.isHasHeritageMultiple());
 		System.out.println("H\u00e9ritage de : " + item.getHeritage());
 		System.out.println("A une interface : " + item.isHasInterface());
@@ -104,9 +106,13 @@ public class menuInterfaces {
         }
         Iterator<String> instanceDeClasseIterator = a.instanceDeClasse.keySet().iterator();
         
+        System.out.println("\n-------------------------------------------------------------------");
+        System.out.format(String.format("%-20s%-23s%-23s","Classe initiale","Nombre d'appels","Vers la classe"));
+		System.out.println("\n-------------------------------------------------------------------");
+		
         while(instanceDeClasseIterator.hasNext()){
         	String t = instanceDeClasseIterator.next();
-        	System.out.println("La classe " + a.getNomClasse() + " appel " + Collections.frequency(classExeptYou, t) + " fois la classe " + t);
+        	System.out.println(String.format("%-20s%-23s%-23s", a.getNomClasse(),Collections.frequency(classExeptYou, t),t));
         	
         }
         
@@ -120,7 +126,12 @@ public class menuInterfaces {
 	public void numero5(Collector a){
 		ArrayList<String> list = new ArrayList<String>() ;
 		
+		System.out.println("\n------------------------------------------------------------------------------------");
+		System.out.format(String.format(affichageFormatage,"Méthode","Appel la classe","Via la méthode"));
+		System.out.println("\n------------------------------------------------------------------------------------");
+		
 		if(!a.instanceDeClasseList.isEmpty() || !a.map.isEmpty()){
+			
 			for (Iterator<method> t = a.listMethod.iterator(); t.hasNext();)
 			{
 				method type = t.next();
@@ -128,15 +139,14 @@ public class menuInterfaces {
 				if(!a.typeNomMap.containsKey(type.classe) ){
 					
 					if(a.map.get(type.classe)==null && !type.classe.equals(a.getNomClasse()))
+						
 					{
-						list.add("La méthode " + type.methodeGeneral + " de la classe " +
-								a.getNomClasse() + " appel directement la classe " + type.classe + " via la méthode " + type.nom);
+						list.add(String.format(affichageFormatage, type.methodeGeneral,type.classe,type.nom));
 					}
 					else
 					{
 						if(!a.map.get(type.classe).equals(a.getNomClasse()))
-						list.add("La méthode " + type.methodeGeneral + " de la classe " +
-								a.getNomClasse() + " appel directement la classe " + a.map.get(type.classe) + " via la méthode " + type.nom);
+							list.add(String.format(affichageFormatage, type.methodeGeneral,a.map. get(type.classe),type.nom));
 					}
 				}
 				
@@ -145,10 +155,11 @@ public class menuInterfaces {
 		else{
 			System.out.println("Aucun appel direct pour la classe " + a.getNomClasse());
 		}
+		
 		Set<String> set = new HashSet<String>() ;
 		set.addAll(list) ;
 		ArrayList<String> distinctList = new ArrayList<String>(set) ;
-
+		
 		for (Iterator<String> t = distinctList.iterator(); t.hasNext();)
 		{
 			String type = t.next();
@@ -161,14 +172,7 @@ public class menuInterfaces {
 
 	public String afficherDossier(String pathToExplore){
 		diskFileExplorer diskFileExplorer = new diskFileExplorer(pathToExplore, true);
-		Long start = System.currentTimeMillis();
 		String choice = diskFileExplorer.list();
-		System.out.println("----------");
-		System.out.println("Analyse de " + pathToExplore + " en " + (System.currentTimeMillis() - start) + " mses");
-		System.out.println(diskFileExplorer.filecount + " fichiers");
-		System.out.println("------------------------");
-		System.out.println("------------------------");
-
 		return choice;
 	}
 }
