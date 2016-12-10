@@ -3,18 +3,20 @@ import java.io;
 public class Test extends Ballon implements Jeu,Salon,Alcool{
 
 public double test;
-private int e;
-public int w;
+private int e,a;
+public int w,a,b,c,s,c,d,c,d,s,a,d;
 public short t;
-private byte q;
-public float p;
-public Test1 test1;
+private byte q,s,s,s;
+public Arraylist<> p;
+public Test1 test1,test53;
 //Test123456.methode(+1) (numero4)
 double vovovotest2;
 
 	public void Allo(Frere f){
 	int a=0;
 	f.Frapper();
+	test1.Salut();
+	p.add(a);
 	}
 	
 	public class sayHello{
@@ -30,6 +32,8 @@ double vovovotest2;
 	              	Legumes.oignon();
 	              	
 	              MontrerDuDoigh();
+	              
+	              
 	              }
 	              
 	            }
@@ -46,6 +50,7 @@ double vovovotest2;
 		              public Chien test;
 		              public int test2;
 		              public Chanteur test;
+		              test53.get(1);
 		            }
 		    public void Crier(){
 		              public Chanteur test;

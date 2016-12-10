@@ -87,11 +87,11 @@ public class menuInterfaces {
         Iterator<Grammaire.Collector.method> methodIterator = methodlist.iterator();
         ArrayList<String> classExeptYou = new ArrayList<String>() ;
         a.instanceDeClasse.clear();
-        
+
         //showing class with extension (no extension = calling intern function)
         while(methodIterator.hasNext()){
         	method m = methodIterator.next();
-        	
+
         	if(!a.typeNomMap.containsKey(m.classe) && !a.map.containsValue(a.getNomClasse())){
         		if(a.map.containsKey(m.classe)){
             		classExeptYou.add(a.map.get(m.classe));

@@ -54,7 +54,7 @@ public class Paiement {
 	}
 
 	//Fonction pour cr�er un paiement
-	public static int createPaiement(Paiement p) {
+	public static int createPaiement(Reptile p) {
 		arrayPaiement.add(p);
 		
 		return p.getIdPaiement();

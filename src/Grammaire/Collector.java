@@ -24,6 +24,7 @@ public class Collector {
 	
 	Stack<String> stackAsso = new Stack<String>();
 	Stack<String> stackMethod = new Stack<String>();
+	Stack<String> stackAttributsModifiers = new Stack<String>();
 	
 	ArrayList<String> assoRecurrency = new ArrayList<String>();
 	ArrayList<method> listMethod = new ArrayList<method>();
